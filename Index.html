@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="/styles/Index.css">
+</head>
+<body>
+    <header id="titulo">
+        <h1>Bienvenido a la página principal</h1>
+    </header>
+
+    <nav id="boton">
+        <button id="irMenu">
+            Ir al menu
+        </button>
+    </nav>
+
+    <footer>
+        <p>Página creada por Rubén Pariente | Contacto: rubinzopdp@gmail.com</p>
+    </footer>
+
+    <script>
+        const irMenu = document.getElementById("irMenu");
+
+        irMenu.addEventListener("click", function(){
+            window.location.href = "Main.html"
+        });
+    </script>
+</body>
+</html>

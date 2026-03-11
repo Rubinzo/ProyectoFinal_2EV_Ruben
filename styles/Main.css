@@ -1,0 +1,63 @@
+header{
+    grid-area: header;
+    background-color: beige;
+    padding: 40px;
+    text-align: center;
+    border-radius: 20px;
+    border: solid 4px;
+}
+
+body{
+    display: grid;
+    background-color: azure;
+    grid-template-areas: 
+    "header header"
+    "paises estilos"
+    "footer footer"
+    ;
+    grid-template-columns: 1fr auto;
+}
+
+
+footer{
+    grid-area: footer;
+    background-color: gray;
+    padding: 20px;
+    /*margin-top: 650px;*/
+    margin-top: 250px;
+    border: solid 4px;
+    text-align: center;
+}
+
+div div{
+    background-color: beige;
+    padding: 40px;
+    text-align: center;
+    border-radius: 20px;
+    border: solid 4px;
+    margin: 15px;
+    width: 350px;
+}
+
+#contenedorPaises{
+    grid-area: paises;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+}
+
+img{
+    width: 150px;
+    height: 100px;
+}
+
+#estilos{
+    grid-area: estilos;
+    background-color: gray;
+    padding: 50px;
+    margin: 20px;
+    border: solid 2px;
+}
+
+#tituloEstilos{
+    margin-top: 0px;
+}

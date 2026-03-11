@@ -1,0 +1,44 @@
+<?xml version= "1.0" encoding="UTF-8"?>
+<Paises>
+    <pais>
+        <nombre>España</nombre>
+        <poblacion>49,5M</poblacion>
+        <tamaño>505.944 km²</tamaño>
+        <img>img/BanderaEspaña.webp</img>
+    </pais>
+
+    <pais>
+        <nombre>Hamburguesa</nombre>
+        <poblacion>49,5M</poblacion>
+        <tamaño>49,5M</tamaño>
+        <img>C:\Visual_Studio\www\ProyectoFinal_2EV_Ruben\img</img>
+    </pais>
+
+    <pais>
+        <nombre>Hamburguesa</nombre>
+        <poblacion>0</poblacion>
+        <tamaño></tamaño>
+        <img></img>
+    </pais>
+
+    <pais>
+        <nombre>Hamburguesa</nombre>
+        <poblacion>0</poblacion>
+        <tamaño></tamaño>
+        <img></img>
+    </pais>
+
+    <pais>
+        <nombre>Hamburguesa</nombre>
+        <poblacion>0</poblacion>
+        <tamaño></tamaño>
+        <img></img>
+    </pais>
+
+    <pais>
+        <nombre>Hamburguesa</nombre>
+        <poblacion>0</poblacion>
+        <tamaño></tamaño>
+        <img></img>
+    </pais>
+</Paises>
