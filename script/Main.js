@@ -28,6 +28,14 @@ fetch("/data/data.xml").then((response) => response.text())
 
         }
 
-        votar();
-
     });
+
+const selector = document.getElementById("selector");
+
+selector.addEventListener("change", function(){
+    const info = document.getElementBy("info")
+    info.style.backgroundColor = "black";
+    
+});
+
+
