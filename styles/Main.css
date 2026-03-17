@@ -21,7 +21,7 @@ body{
 
 footer{
     grid-area: footer;
-    background-color: gray;
+    background-color: #475569;
     padding: 20px;
     /*margin-top: 650px;*/
     margin-top: 250px;
@@ -52,10 +52,10 @@ img{
 
 #estilos{
     grid-area: estilos;
-    background-color: gray;
+    background-color: #475569;
     padding: 50px;
     margin: 20px;
-    border: solid 2px;
+    border: solid 4px;
 }
 
 #tituloEstilos{
