@@ -10,35 +10,35 @@
     <pais>
         <nombre>Portugal</nombre>
         <poblacion>49,5M</poblacion>
-        <tamaño>49,5M</tamaño>
+        <tamaño>10,5M</tamaño>
         <img>img/BanderaPortugal.png</img>
     </pais>
 
     <pais>
         <nombre>Italia</nombre>
-        <poblacion>0</poblacion>
-        <tamaño></tamaño>
-        <img></img>
+        <poblacion>58,9M</poblacion>
+        <tamaño>357.599 km²</tamaño>
+        <img>img/BanderaItalia.png</img>
     </pais>
 
     <pais>
         <nombre>Francia</nombre>
-        <poblacion>0</poblacion>
-        <tamaño></tamaño>
-        <img></img>
+        <poblacion>68,4M</poblacion>
+        <tamaño>551.695 km²</tamaño>
+        <img>img/BanderaFrancia.png</img>
     </pais>
 
     <pais>
         <nombre>Alemania</nombre>
-        <poblacion>0</poblacion>
-        <tamaño></tamaño>
-        <img></img>
+        <poblacion>84,6M</poblacion>
+        <tamaño>357.588 km²</tamaño>
+        <img>img/BanderaAlemania.png</img>
     </pais>
 
     <pais>
-        <nombre>Hamburguesa</nombre>
-        <poblacion>0</poblacion>
-        <tamaño></tamaño>
-        <img></img>
+        <nombre>Inglaterra</nombre>
+        <poblacion>57,1M</poblacion>
+        <tamaño>130.279 km²</tamaño>
+        <img>img/BanderaInglaterra.png</img>
     </pais>
 </Paises>

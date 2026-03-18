@@ -38,6 +38,61 @@ const estilos = document.getElementById("estilos");
 selector.addEventListener("change", function(){
     
 
+        const modal = document.getElementById("modal");
+        if(this.value == "personalizado"){
+            modal.innerHTML = `<p>Configuración de estilo personalizada: </p>
+                <div class="personalizar">
+                    <p>Cabecera:</p>
+                    <input type="color" id="cabecera">
+                </div>
+                <div class="personalizar">
+                    <p>Tarjetas:</p>
+                    <input type="color" id="tarjetas">
+                </div>
+                <div class="personalizar">
+                    <p>Fondo:</p>
+                    <input type="color" id="fondo">
+                </div>
+                <div class="personalizar">
+                    <p>Menu y Footer:</p>
+                    <input type="color" id="menu">
+                </div>
+                <button id="cerrar">Cerrar</button>
+        `;
+        const cerrarModal = document.getElementById("cerrar");
+        
+        cerrarModal.addEventListener('click', () => {
+            modal.close();
+        });
+        modal.showModal();
+
+        const menu = document.getElementById("menu");
+        menu.addEventListener("change", function(){
+        estilos.style.backgroundColor = this.value;
+        footer.style.backgroundColor = this.value;
+        });
+
+        const cabecera = document.getElementById("cabecera");
+        cabecera.addEventListener("change", function(){
+        header.style.backgroundColor = this.value;
+        });
+
+        const tarjetas = document.getElementById("tarjetas");
+        tarjetas.addEventListener("change", function(){
+        for (let i = 0; i < info.length; i++) {
+            info[i].style.backgroundColor = this.value;
+        }   
+            modal.style.backgroundColor = this.value;
+            modal.style.color = this.value;
+            modal.style.color = "black";
+        });
+
+        const fondo = document.getElementById("fondo");
+        fondo.addEventListener("change", function(){
+        document.body.style.backgroundColor = this.value;
+        });
+
+    }
     if(this.value == "oscuro"){
         //Header
         header.style.backgroundColor = "#3D2B1F";
@@ -60,6 +115,16 @@ selector.addEventListener("change", function(){
         estilos.style.backgroundColor = "#0F172A";
         estilos.style.borderColor = "white";
         estilos.style.color = "white";
+        //Botones
+        buscar.style.backgroundColor = "#0F172A";
+        buscar.style.color = "white";
+        buscar.style.borderColor = "white";
+        añadirTarjeta.style.backgroundColor = "#0F172A";
+        añadirTarjeta.style.color = "white";
+        añadirTarjeta.style.borderColor = "white";
+        //modal personalizado
+        modal.style.backgroundColor = "#0F172A";
+        modal.style.color = "white";
 
     }
 
@@ -85,56 +150,16 @@ selector.addEventListener("change", function(){
         estilos.style.backgroundColor = "#475569";
         estilos.style.borderColor = "black";
         estilos.style.color = "black";
-    }
-        const modal = document.getElementById("modal");
-        if(this.value == "personalizado"){
-            modal.innerHTML = `<p>Configuración de estilo personalizada: </p>
-                <div class="personalizar">
-                    <p>Cabecera:</p>
-                    <input type="color" id="cabecera">
-                </div>
-                <div class="personalizar">
-                    <p>Tarjetas:</p>
-                    <input type="color" id="tarjetas">
-                </div>
-                <div class="personalizar">
-                    <p>Fondo:</p>
-                    <input type="color" id="fondo">
-                </div>
-                <div class="personalizar">
-                    <p>Menu y Footer:</p>
-                    <input type="color" id="menu">
-                </div>
-                <button id="cerrar">Cerrar</button>
-        `;
-        const cerrarModal = document.getElementById("cerrar");
-        cerrarModal.addEventListener('click', () => {
-            modal.close();
-        });
-        modal.showModal();
-        const menu = document.getElementById("menu");
-        menu.addEventListener("change", function(){
-        estilos.style.backgroundColor = this.value;
-        footer.style.backgroundColor = this.value;
-        });
-
-        const cabecera = document.getElementById("cabecera");
-        cabecera.addEventListener("change", function(){
-        header.style.backgroundColor = this.value;
-        });
-
-        const tarjetas = document.getElementById("tarjetas");
-        tarjetas.addEventListener("change", function(){
-        for (let i = 0; i < info.length; i++) {
-            info[i].style.backgroundColor = this.value;
-        }   
-        });
-
-        const fondo = document.getElementById("fondo");
-        fondo.addEventListener("change", function(){
-        document.body.style.backgroundColor = this.value;
-        });
-
+        //Botones
+        buscar.style.backgroundColor = "azure";
+        buscar.style.color = "black";
+        buscar.style.borderColor = "black";
+        añadirTarjeta.style.backgroundColor = "azure";
+        añadirTarjeta.style.color = "black";
+        añadirTarjeta.style.borderColor = "black";
+        //modal personalizado
+        modal.style.backgroundColor = "beige";
+        modal.style.color = "black";    
     }
 });
 
@@ -161,7 +186,7 @@ function filtrar(){
         let nombre = info[i].dataset.nombre.toLowerCase();
         if(nombre.includes(inputNombre.value.toLowerCase())){
             console.log("coincide")
-            
+            info[i].style.display = "block";
         
         }else{
             info[i].style.display = "none";
@@ -179,9 +204,11 @@ function modalTarjeta(){
                 <div id="divModal">
                     <p id="tituloModal">Crea tu tarjeta: </p>
                     <div id="crearTarjeta">
+                        <input type="file" id="tarjetaImg">
+                        <p id="vistaPrevia"></p>
                         <input type="text" placeholder="Nombre del país" id="tarjetaNombre">
-                        <input type="text" placeholder="Población del país" id="tarjetaNombre">
-                        <input type="text" placeholder="Tamaño del país" id="tarjetaNombre">
+                        <input type="text" placeholder="Población del país" id="tarjetaPoblacion">
+                        <input type="text" placeholder="Tamaño del país" id="tarjetaTamaño">
                     </div>
                     <div id="divBotones">
                         <button id="cerrarModal">Cerrar</button>
@@ -190,9 +217,86 @@ function modalTarjeta(){
                 </div>
         `;
         const cerrarModal = document.getElementById("cerrarModal");
+        const divBotones = document.getElementById("divBotones");
+        const aplicar = document.getElementById("aplicar");
+
+        if(selector.value == "oscuro"){
+            modalTarjeta.style.backgroundColor = "black";
+            modalTarjeta.style.color = "white";
+            cerrarModal.style.backgroundColor = "#0F172A";
+            cerrarModal.style.color = "white";
+            cerrarModal.style.borderColor = "white";
+            aplicar.style.backgroundColor = "#0F172A";
+            aplicar.style.color = "white";
+            aplicar.style.borderColor = "white";
+        }
+        
+        if(selector.value == "claro"){
+            modalTarjeta.style.backgroundColor = "beige";
+            modalTarjeta.style.color = "black";
+            cerrarModal.style.backgroundColor = "azure";
+            cerrarModal.style.color = "black";
+            cerrarModal.style.borderColor = "black";
+            aplicar.style.backgroundColor = "azure";
+            aplicar.style.color = "black";
+            aplicar.style.borderColor = "black";
+        }
+        const fondo = document.getElementById("fondo");
+        if(selector.value == "personalizado"){
+            modalTarjeta.style.backgroundColor = fondo.value;
+        }
         cerrarModal.addEventListener('click', () => {
             modalTarjeta.close();
         });
         modalTarjeta.showModal();
         
+        const inputImg = document.getElementById("tarjetaImg");
+        const vistaPrevia = document.getElementById("vistaPrevia");
+        //FileReader
+        let linkImagen = "";
+        inputImg.addEventListener("change", function() {
+            if (this.files && this.files[0]) {
+                let reader = new FileReader();
+
+                reader.onload = function(e) {
+                    // Inyectar la imagen para la vista previa
+                    vistaPrevia.innerHTML = `
+                        <img src="${e.target.result}" 
+                            style="width: 100%; max-width: 200px; border-radius: 8px; border: 1px solid #ccc;">
+                    `;
+                };
+
+                reader.readAsDataURL(this.files[0]);
+                if (this.files && this.files[0]) {
+                // Crear el link 
+                linkImagen = URL.createObjectURL(this.files[0]);
+                
+
+
+                
+                // Link para luego aplicar
+                miLinkGlobal = linkImagen;
+                }
+            }
+        });
+
+        /*Modal aplicar */
+            aplicar.addEventListener("click", function(){
+                console.log(tarjetaNombre.value);
+                contenedorPaises.innerHTML += `
+                <div class="info" data-pais data-nombre = ${tarjetaNombre.value} 
+                data-status="activo">
+                    <img src="${linkImagen}"></img>
+                    <p>Nombre: ${tarjetaNombre.value}</p>
+                    <p>Población: ${tarjetaPoblacion.value}</p>
+                    <p>Tamaño: ${tarjetaTamaño.value}</p>
+                </div>
+                `;
+                modalTarjeta.close();
+            });
+
 }
+
+
+
+    
