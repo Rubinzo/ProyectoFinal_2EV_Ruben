@@ -9,10 +9,17 @@
 <body>
     <header id="header">
         <h1>Listado de países</h1>
+        <input type="text" placeholder="Nombre del país" id="inputNombre">
+        <button id="buscar">Buscar</button>
+        <button id="añadirTarjeta">Añadir tarjeta</button>
+
+
     </header>
 
 
+
     <div id="contenedorPaises">
+        
     </div>
 
     <nav id="estilos">
@@ -21,8 +28,14 @@
         <select id="selector">
             <option value="claro" id="claro">Claro</option>
             <option value="oscuro" id="oscuro">Oscuro</option>
+            <option value="personalizado">Personalizado</option>
         </select>
     </nav>
+    <dialog id="modal"></dialog>
+    <dialog id="modalTarjeta"></dialog>
+
+
+
     <footer id="footer">
         <p>Página creada por Rubén Pariente | Contacto: rubinzopdp@gmail.com</p>
     </footer>
